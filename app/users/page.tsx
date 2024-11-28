@@ -1,4 +1,6 @@
+import Link from "next/link"
 import UserTable from "./UserTable"
+import { Suspense } from "react"
 
 
 interface Props {
@@ -17,8 +19,9 @@ const UsersPage = async ({searchParams: {sortOrder}}:Props) => {
     <h1>Users</h1>
     {sortOrder}
     {/* <p>{new Date().toLocaleTimeString()}</p> */}
-
-   <UserTable sortOrder={sortOrder}/>
+    <Link href="/users/new" className="btn btn-primary">New User</Link>
+   
+      <UserTable sortOrder={sortOrder}/>
     
     
     
